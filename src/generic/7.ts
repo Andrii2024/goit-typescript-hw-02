@@ -5,14 +5,15 @@
   який зіставлятиме кожну роль користувача з її описом.
 */
 
+type PartialRoleDescription = Partial<Record<UserRole, string>>;
+
 export enum UserRole {
   admin = "admin",
   editor = "editor",
   guest = "guest",
 }
 
-// Замініть наступний код на версію за допомогою Record
-const RoleDescription: Record<UserRole, string> = {
+const RoleDescription: PartialRoleDescription = {
   admin: "Admin User",
   editor: "Editor User",
   guest: "Guest User",
